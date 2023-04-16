@@ -6,12 +6,8 @@ import { Chord } from '@tonaljs/tonal';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterTestingModule],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
@@ -31,13 +27,16 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('chordVis app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain(
+      'chordVis app is running!'
+    );
   });
 
-  it("test1", ()=> {
+  it('test1', () => {
     const a = Chord.detect(['D', 'F#', 'A', 'C']); // => ["D7"]
     const b = Chord.detect(['F#', 'A', 'C', 'D']); // => ["D7/F#"]
     const c = Chord.detect(['A', 'C', 'D', 'F#']); // => ["D7/A"]
     const d = Chord.detect(['E', 'G#', 'B', 'C#']); // => ["E6", "C#m7/E"]
-  }) 
+    const e = Chord.detect(['C', 'E', 'G']); // => ["E6", "C#m7/E"]
+  });
 });
