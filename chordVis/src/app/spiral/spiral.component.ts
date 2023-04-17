@@ -44,7 +44,7 @@ export class SpiralComponent implements OnInit {
     this.subcription && this.subcription.unsubscribe();
     const canvas = this.myCanvas.nativeElement as HTMLCanvasElement;
     if (canvas.getContext) {
-      var ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d');
       if (ctx != null) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
