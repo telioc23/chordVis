@@ -7,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpiralSvgComponent implements OnInit {
   svg = document.getElementsByTagName('svg')[0];
-  svgNS = this.svg.getAttribute('xmlns');
 
   createOn(root: SVGElement, name: string, attrs: any) {
-    var el = document.createElementNS(this.svgNS, name);
+    var el = document.createElementNS('http://www.w3.org/2000/svg', name);
     for (var attr in attrs) {
       if (attrs.hasOwnProperty(attr)) el.setAttribute(attr, attrs[attr]);
     }
